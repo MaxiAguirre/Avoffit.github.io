@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avoffit - Salud y Autodesarrollo</title>
+    <link rel="stylesheet" href="../css/Avoffit.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="wave"></div>
+        <h1>Bienvenido a Avoffit</h1>
+        <p>Transforma tu vida con salud y diversión</p>
+        <nav>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#mission">Nuestra Misión</a></li>
+                <li><a href="#about">Quiénes Somos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Sector 1: Quiénes Somos con Biografía Integrada -->
+    <section id="about" class="about">
+        <h2>Quiénes Somos</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Avoffit es una aplicación que promueve la salud física a través del entretenimiento, brindando una alternativa innovadora para que el ejercicio se convierta en una actividad emocionante y constante. Nuestro equipo está comprometido en ayudarte a alcanzar un estilo de vida más activo, sin aburrimiento ni rutina.</p>
+                <p>Invitamos a todos a redescubrir el ejercicio como una fuente de autodesarrollo y diversión, proporcionando un ambiente en el que cualquier persona pueda mejorar su salud física y mental mientras disfruta de la actividad.</p>
+                <h3>Sobre el Fundador</h3>
+                <p>Maximiliano Aguirre Arango, 16 años. Scripter, Diseñador de Juegos, Aprendiz de Diseño Gráfico, Estudiante de 11.</p>
+            </div>
+            <div class="about-photo">
+                <img src="../imagenes/IMG-20241023-WA0078.jpg" alt="Foto de Maximiliano Aguirre Arango">
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector 2: Nuestros Servicios -->
+    <section id="services" class="services">
+        <h2>Explora nuestros servicios</h2>
+        <div class="carousel">
+            <button class="carousel-button left">&lt;</button>
+            <div class="carousel-container">
+                <div class="service">
+                    <h3>Entrenamientos Divertidos</h3>
+                    <p>Transformamos el ejercicio en una experiencia de juego y diversión. Cada sesión es una oportunidad para desafiarte y disfrutar al máximo...</p>
+                </div>
+                <div class="service">
+                    <h3>Competencias de Superación</h3>
+                    <p>Con nuestro sistema de competencias, podrás desafiar a otros usuarios en competencias interactivas, creando un ambiente de motivación constante...</p>
+                </div>
+                <div class="service">
+                    <h3>Actividades Recreativas</h3>
+                    <p>Nuestras actividades están diseñadas para que el ejercicio no sea una tarea, sino una fuente de disfrute y socialización...</p>
+                </div>
+                <div class="service">
+                    <h3>Entrenamiento en Grupo</h3>
+                    <p>Fortalece tu compromiso con el ejercicio participando en sesiones grupales que fomentan la colaboración y el trabajo en equipo...</p>
+                </div>
+                <div class="service">
+                    <h3>Consultoría de Bienestar</h3>
+                    <p>Recibe orientación holística para mejorar todos los aspectos de tu salud física y emocional...</p>
+                </div>
+                <div class="service">
+                    <h3>Yoga y Meditación</h3>
+                    <p>Encuentra el equilibrio entre cuerpo y mente con nuestras clases diseñadas para mejorar tu bienestar integral...</p>
+                </div>
+            </div>
+            <button class="carousel-button right">&gt;</button>
+        </div>
+    </section>
+
+    <!-- Sector 3: Misión y Visión -->
+    <section id="mission" class="mission">
+        <h2>Nuestra Misión y Visión</h2>
+        <p>Nos dedicamos a empoderar a individuos sedentarios, ayudándoles a transformar sus vidas a través de la actividad física, la diversión y el autodesarrollo. Nos comprometemos a proporcionar experiencias únicas que fomenten la salud, el bienestar y el crecimiento personal.</p>
+        <p>Visión 2025: Ser la aplicación de referencia para mejorar estilos de vida a través de juegos y actividad física, generando un impacto positivo y duradero en nuestra comunidad.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contacto</h2>
+        <p>Si deseas más información o quieres unirte a nuestra misión, contáctanos:</p>
+        <p>Teléfono: 3023445178</p>
+        <p>Dirección: Cll 103D #71-30</p>
+        <form class="contact-form">
+            <input type="text" placeholder="Tu Nombre" required>
+            <input type="email" placeholder="Tu Correo" required>
+            <input type="text" placeholder="Asunto" required>
+            <input type="text" placeholder="Número de Teléfono" required>
+            <textarea placeholder="Mensaje" rows="4" required></textarea>
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Avoffit. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Carousel logic
+        let currentIndex = 0;
+        const services = document.querySelectorAll('.service');
+
+        function updateService() {
+            services.forEach((service, index) => {
+                service.style.display = index === currentIndex ? 'block' : 'none';
+            });
+        }
+        updateService();
+
+        document.querySelector('.carousel-button.left').addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : services.length - 1;
+            updateService();
+        });
+
+        document.querySelector('.carousel-button.right').addEventListener('click', () => {
+            currentIndex = (currentIndex < services.length - 1) ? currentIndex + 1 : 0;
+            updateService();
+        });
+    </script>
+</body>
+</html>
